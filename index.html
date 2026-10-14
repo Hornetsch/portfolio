@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hornetsch Art Portfolio</title>
+<meta name="description" content="The cozy little art portfolio of Hornetsch (Hornet): character illustrations, Pokémon fan art, team line-ups, reference sheets, and a tiny starter-catching minigame.">
+<meta name="theme-color" content="#fff6ea">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Hornetschq Art Portfolio">
+<meta property="og:description" content="Check out my art!! Character illustrations and Pokémon fan art! Come sit by the window :3">
+<meta property="og:image" content="pieces/hornet.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Press+Start+2P&display=swap&cachebust=1" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__scene">
+    <div class="preloader__hornet">
+      <svg viewBox="0 0 100 100" role="img" aria-label="A little hornet">
+        <defs><clipPath id="loaderBody"><path d="M50 38c14 0 20 14 18 28-1 9-7 17-18 26C39 83 33 75 32 66c-2-14 4-28 18-28z"></path></clipPath></defs>
+        <path d="M48 40C38 12 14 8 6 20c-4 8 10 22 42 24z" fill="#fff" opacity="0.85"></path>
+        <path d="M52 40C62 12 86 8 94 20c4 8-10 22-42 24z" fill="#fff" opacity="0.85"></path>
+        <path d="M45 86L50 99L55 86z" fill="#4a3a5c" stroke="#4a3a5c" stroke-width="2" stroke-linejoin="round"></path>
+        <path d="M50 38c14 0 20 14 18 28-1 9-7 17-18 26C39 83 33 75 32 66c-2-14 4-28 18-28z" fill="#ffc94d"></path>
+        <g clip-path="url(#loaderBody)" fill="#4a3a5c">
+          <rect x="28" y="52" width="44" height="8"></rect>
+          <rect x="28" y="67" width="44" height="8"></rect>
+        </g>
+        <circle cx="50" cy="30" r="15" fill="#ffc94d" stroke="#4a3a5c" stroke-width="3"></circle>
+        <circle cx="44" cy="29" r="3.500" fill="#4a3a5c"></circle>
+        <circle cx="56" cy="29" r="3.500" fill="#4a3a5c"></circle>
+        <circle cx="45" cy="27.800" r="1.100" fill="#fff"></circle>
+        <circle cx="57" cy="27.800" r="1.100" fill="#fff"></circle>
+        <path d="M45 35c3 3 7 3 10 0" stroke="#4a3a5c" stroke-width="2.500" fill="none" stroke-linecap="round"></path>
+        <circle cx="40" cy="34" r="2.500" fill="#ff9fb5" opacity="0.8"></circle>
+        <circle cx="60" cy="34" r="2.500" fill="#ff9fb5" opacity="0.8"></circle>
+        <path d="M42 17c-4-8-9-11-14-10M58 17c4-8 9-11 14-10" stroke="#4a3a5c" stroke-width="3" fill="none" stroke-linecap="round"></path>
+      </svg>
+    </div>
+    <div class="preloader__trail">
+      <span></span><span></span><span></span>
+    </div>
+    <p class="preloader__text">warming up the crayons&hellip;</p>
+  </div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"><span></span></div>
+
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="cursor__ring"></div>
+  <div class="cursor__dot"></div>
+</div>
+<div class="cursor-trail" id="cursorTrail" aria-hidden="true"></div>
+
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-blob bg-blob--one"></div>
+  <div class="bg-blob bg-blob--two"></div>
+  <div class="bg-blob bg-blob--three"></div>
+  <div class="bg-blob bg-blob--four"></div>
+  <div class="bg-grain"></div>
+  <div class="bg-honeycomb"></div>
+  <div class="bg-stars" id="bgStars"></div>
+  <div class="bg-fireflies" id="bgFireflies"></div>
+  <div class="bg-stickers" id="bgStickers"></div>
+</div>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="#home" aria-label="Hornetsch, back to the top">
+    <span class="brand__mark">
+      <svg viewBox="0 0 100 100" width="46" height="46" aria-hidden="true">
+        <ellipse cx="22" cy="30" rx="16" ry="11" fill="#fff" stroke="#4a3a5c" stroke-width="3" transform="rotate(-25 22 30)"></ellipse>
+        <ellipse cx="78" cy="30" rx="16" ry="11" fill="#fff" stroke="#4a3a5c" stroke-width="3" transform="rotate(25 78 30)"></ellipse>
+        <path d="M38 24c-3-8-8-12-14-12M62 24c3-8 8-12 14-12" stroke="#4a3a5c" stroke-width="4" fill="none" stroke-linecap="round"></path>
+        <circle cx="24" cy="12" r="4" fill="#4a3a5c"></circle>
+        <circle cx="76" cy="12" r="4" fill="#4a3a5c"></circle>
+        <circle cx="50" cy="56" r="34" fill="#ffc94d" stroke="#4a3a5c" stroke-width="4"></circle>
+        <path d="M18 44c10-4 54-4 64 0M16 58c12-4 56-4 68 0" stroke="#4a3a5c" stroke-width="5" fill="none" opacity="0.18"></path>
+        <circle cx="37" cy="54" r="6" fill="#4a3a5c"></circle>
+        <circle cx="63" cy="54" r="6" fill="#4a3a5c"></circle>
+        <circle cx="39" cy="52" r="2" fill="#fff"></circle>
+        <circle cx="65" cy="52" r="2" fill="#fff"></circle>
+        <circle cx="27" cy="66" r="5" fill="#ff9fb5" opacity="0.8"></circle>
+        <circle cx="73" cy="66" r="5" fill="#ff9fb5" opacity="0.8"></circle>
+        <path d="M43 68c4 6 10 6 14 0" stroke="#4a3a5c" stroke-width="4" fill="none" stroke-linecap="round"></path>
+      </svg>
+    </span>
+    <span class="brand__text">
+      <strong>Hornetsch</strong>
+      <small>cozy artist &amp; bug enthusiast</small>
+    </span>
+  </a>
+
+  <nav class="nav" id="nav" aria-label="Main navigation">
+    <a class="nav__link" href="#about"><span>About</span></a>
+    <a class="nav__link" href="#gallery"><span>Gallery</span></a>
+    <a class="nav__link" href="#game"><span>Minigame</span></a>
+    <a class="nav__link" href="#commissions"><span>Commissions</span></a>
+    <a class="nav__link" href="#contact"><span>Say hi</span></a>
+  </nav>
+
+  <div class="topbar__actions">
+    <button class="icon-btn" id="soundToggle" type="button" aria-pressed="false" title="Toggle sound effects">
+      <svg class="icon-sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path></svg>
+      <svg class="icon-sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path></svg>
+      <span class="visually-hidden">Toggle sound effects</span>
+    </button>
+    <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">
+      <span class="nav-toggle__bars"><i></i><i></i><i></i></span>
+      <span class="visually-hidden">Open the menu</span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="hero__eyebrow reveal">
+          <span class="sparkle-dot"></span>
+          hello there, welcome to my little corner
+        </p>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line">
+            <span class="letter" data-letter="H">H</span><span class="letter" data-letter="O">o</span><span class="letter" data-letter="R">r</span><span class="letter" data-letter="N">n</span><span class="letter" data-letter="E">e</span><span class="letter" data-letter="T">t</span><span class="letter" data-letter="S">s</span><span class="letter" data-letter="C">c</span><span class="letter" data-letter="H">h</span>
+          </span>
+          <span class="hero__title-sub">
+            <em>Hornet</em> for short
+          </span>
+        </h1>
+
+        <p class="hero__lede reveal">
+          Illustrator of cozy characters and dramatic showdowns. 
+          Everything on this page was drawn by me :3 
+          grab a blanket, a warm drink, and have a look around.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a class="btn btn--primary" href="#gallery">
+            <span class="btn__label">See the gallery</span>
+            <span class="btn__shine"></span>
+          </a>
+          <a class="btn btn--ghost" href="#game">
+            <span class="btn__label">Play the minigame</span>
+            <span class="btn__wiggle">!</span>
+          </a>
+        </div>
+
+        
+      </div>
+
+      <div class="hero__art reveal">
+        <div class="hero__frame">
+          <div class="tape tape--one"></div>
+          <div class="tape tape--two"></div>
+          <img src="assets/thumbs/hornet.jpg" alt="Portrait illustration of Hornetsch: a smiling artist with long blonde hair, round glasses and green eyes, wearing a dark beanie and scarf." width="800" height="800" fetchpriority="high">
+          <div class="hero__frame-tag">that's me!</div>
+        </div>
+
+        <div class="hero__badge hero__badge--one">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.5 6 6.5.5-5 4.2 1.6 6.3L12 16.7 6.4 20l1.6-6.3L3 9.5 9.5 9z" fill="currentColor"></path></svg>
+          cozy vibes
+        </div>
+        <div class="hero__badge hero__badge--two">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a4.6 4.6 0 0 1 7-3.9A4.6 4.6 0 0 1 19 11c0 5.4-7 10-7 10z" fill="currentColor"></path></svg>
+          made with love
+        </div>
+        <div class="hero__doodle hero__doodle--hornet" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <defs><clipPath id="hornetBody"><path d="M50 38c14 0 20 14 18 28-1 9-7 17-18 26C39 83 33 75 32 66c-2-14 4-28 18-28z"></path></clipPath></defs>
+            <path d="M48 40C38 12 14 8 6 20c-4 8 10 22 42 24z" fill="#fff" opacity="0.85"></path>
+            <path d="M52 40C62 12 86 8 94 20c4 8-10 22-42 24z" fill="#fff" opacity="0.85"></path>
+            <path d="M45 86L50 99L55 86z" fill="#4a3a5c" stroke="#4a3a5c" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M50 38c14 0 20 14 18 28-1 9-7 17-18 26C39 83 33 75 32 66c-2-14 4-28 18-28z" fill="#ffc94d"></path>
+            <g clip-path="url(#hornetBody)" fill="#4a3a5c">
+              <rect x="28" y="52" width="44" height="8"></rect>
+              <rect x="28" y="67" width="44" height="8"></rect>
+            </g>
+            <circle cx="50" cy="30" r="15" fill="#ffc94d" stroke="#4a3a5c" stroke-width="3"></circle>
+            <circle cx="44" cy="29" r="3.500" fill="#4a3a5c"></circle>
+            <circle cx="56" cy="29" r="3.500" fill="#4a3a5c"></circle>
+            <circle cx="45" cy="27.800" r="1.100" fill="#fff"></circle>
+            <circle cx="57" cy="27.800" r="1.100" fill="#fff"></circle>
+            <path d="M45 35c3 3 7 3 10 0" stroke="#4a3a5c" stroke-width="2.500" fill="none" stroke-linecap="round"></path>
+            <circle cx="40" cy="34" r="2.500" fill="#ff9fb5" opacity="0.8"></circle>
+            <circle cx="60" cy="34" r="2.500" fill="#ff9fb5" opacity="0.8"></circle>
+            <path d="M42 17c-4-8-9-11-14-10M58 17c4-8 9-11 14-10" stroke="#4a3a5c" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__group">
+        <b>pok&eacute;mon</b><i>&#10022;</i>
+        <b>original characters</b><i>&#10022;</i>
+        <b>sonic</b><i>&#10022;</i>
+        <b>team line-ups</b><i>&#10022;</i>
+        <b>reference sheets</b><i>&#10022;</i>
+        <b>fan art</b><i>&#10022;</i>
+        <b>cozy commission work</b><i>&#10022;</i>
+      </span>
+      <span class="marquee__group">
+        <b>pok&eacute;mon</b><i>&#10022;</i>
+        <b>original characters</b><i>&#10022;</i>
+        <b>sonic</b><i>&#10022;</i>
+        <b>team line-ups</b><i>&#10022;</i>
+        <b>reference sheets</b><i>&#10022;</i>
+        <b>fan art</b><i>&#10022;</i>
+        <b>cozy commission work</b><i>&#10022;</i>
+      </span>
+    </div>
+  </div>
+
+  <section class="section about" id="about">
+    <div class="section__head">
+      <p class="section__kicker reveal">about the artist</p>
+      <h2 class="section__title reveal">A hornet, a pencil, and far too much enthusiasm</h2>
+      <p class="section__lede reveal">
+        Hi, i&rsquo;m Hornetsch. I draw characters with a lot of feeling in them;
+        bright cel shading, silly expressions, and the occasional dramatic sunset.
+        My favourite subjects are my own cast of critters, whatever Pok&eacute;mon has
+        taken over my brain that week, and teams of very serious heroes who are
+        absolutely not serious at all.
+      </p>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__card about__card--art reveal">
+        <div class="tape tape--three"></div>
+        <img src="assets/thumbs/Hornetsch refrence sheet.jpg" alt="Reference sheet of Hornetsch, a cartoon hornet character with a skull mask, four arms, a wide-brimmed hat, gloves and a striped stinger." width="1000" height="1000" loading="lazy">
+        <p class="about__caption">the character reference sheet of a cute hornet :D</p>
+      </div>
+
+      <div class="about__panel reveal">
+        <h3>Things i love drawing</h3>
+        <ul class="love-list">
+          <li style="--fill: 96%"><span class="love-list__label">character expression &amp; faces</span><span class="love-list__bar"><i></i></span></li>
+          <li style="--fill: 92%"><span class="love-list__label">bright cel shading</span><span class="love-list__bar"><i></i></span></li>
+          <li style="--fill: 88%"><span class="love-list__label">group / team pieces</span><span class="love-list__bar"><i></i></span></li>
+          <li style="--fill: 84%"><span class="love-list__label">scenery &amp; skies</span><span class="love-list__bar"><i></i></span></li>
+          <li style="--fill: 79%"><span class="love-list__label">bugs. just bugs</span><span class="love-list__bar"><i></i></span></li>
+        </ul>
+
+        <div class="about__facts">
+          <div class="fact">
+            <span class="fact__icon">&#10022;</span>
+            <p><strong>Software:</strong> drawn digitally, sketch, lineart, colour on top.</p>
+          </div>
+          <div class="fact">
+            <span class="fact__icon">&#10022;</span>
+            <p><strong>Signature:</strong> there is a tiny <em>HORNETSCH</em> hiding in nearly every piece x3</p>
+          </div>
+          <div class="fact">
+            <span class="fact__icon">&#10022;</span>
+            <p><strong>Mood:</strong> warm lighting, soft palettes, one (1) spooky skeleton.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section gallery" id="gallery">
+    <div class="section__head">
+      <p class="section__kicker reveal">the gallery</p>
+      <h2 class="section__title reveal">Pick a pile of artwork to rummage through</h2>
+      <p class="section__lede reveal">
+        Click any piece to blow it up big. Use the buttons to sort by subject,
+        or just scroll and enjoy the mess.
+      </p>
+    </div>
+
+    <div class="filters reveal" id="filters" role="group" aria-label="Filter artwork">
+      <button class="chip chip--active" type="button" data-filter="all">everything <span class="chip__count">20</span></button>
+      <button class="chip" type="button" data-filter="pokemon">pok&eacute;mon <span class="chip__count">10</span></button>
+      <button class="chip" type="button" data-filter="sonic">sonic <span class="chip__count">2</span></button>
+      <button class="chip" type="button" data-filter="oc">original characters <span class="chip__count">4</span></button>
+      <button class="chip" type="button" data-filter="fanart">other fan art <span class="chip__count">4</span></button>
+      <button class="chip chip--shuffle" type="button" id="shuffleGallery">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h4l8 10h4M4 17h4l2-2.5M16 7h4M18 4l3 3-3 3M18 14l3 3-3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        shuffle
+      </button>
+    </div>
+
+    <div class="gallery__grid" id="galleryGrid">
+
+      <article class="card card--wide" data-category="sonic" data-title="The Team!" data-tags="sonic, original characters, group">
+        <div class="card__frame">
+          <img src="assets/thumbs/The_Team_exclamation_point.jpg" data-full="pieces/The_Team_exclamation_point.png" alt="Four Sonic-style characters posing together as a team under a dramatic sky." width="1000" height="883" loading="lazy">
+          <span class="card__badge card__badge--team">team shot</span>
+        </div>
+        <div class="card__info">
+          <h3>The Team!</h3>
+          <p>sonic oc &middot; group piece &middot; lineup</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="oc" data-title="Hornetsch Character Concept" data-tags="original character, reference sheet, hornet">
+        <div class="card__frame">
+          <img src="assets/thumbs/Hornetsch refrence sheet.jpg" data-full="pieces/Hornetsch refrence sheet.png" alt="Reference sheet of the hornet character Hornetsch showing poses, colours and expression notes." width="1000" height="1000" loading="lazy">
+          <span class="card__badge card__badge--oc">my OC</span>
+        </div>
+        <div class="card__info">
+          <h3>Hornetsch Character Concept</h3>
+          <p>oc &middot; ref sheet</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--tall" data-category="pokemon" data-title="Team Slash" data-tags="pokemon, scenery, sunset">
+        <div class="card__frame">
+          <img src="assets/thumbs/Team slash sunset.jpg" data-full="pieces/Team slash sunset.png" alt="Two Pokémon, a Bisharp and a Roserade-like figure, standing together in front of a warm sunset horizon." width="1000" height="561" loading="lazy">
+          <span class="card__badge card__badge--scene">scenery</span>
+        </div>
+        <div class="card__info">
+          <h3>Team Slash</h3>
+          <p>pok&eacute;mon oc &middot; full illustration</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--starter" data-category="pokemon" data-title="Quaxly" data-tags="pokemon, starter, paldea">
+        <div class="card__frame">
+          <img src="assets/thumbs/Quaxly.jpg" data-full="pieces/Quaxly.png" alt="Cheerful Quaxly, the blue duck Pokémon, waving with a big open smile." width="574" height="726" loading="lazy">
+          <span class="card__badge card__badge--starter">playable!</span>
+        </div>
+        <div class="card__info">
+          <h3>Quaxly</h3>
+          <p>pok&eacute;mon &middot; starter trio</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--starter" data-category="pokemon" data-title="Fuecoco" data-tags="pokemon, starter, paldea">
+        <div class="card__frame">
+          <img src="assets/thumbs/fuecoco.jpg" data-full="pieces/fuecoco.png" alt="Fuecoco, the red crocodile Pokémon, mid-shout with its mouth wide open." width="686" height="772" loading="lazy">
+          <span class="card__badge card__badge--starter">playable!</span>
+        </div>
+        <div class="card__info">
+          <h3>Fuecoco</h3>
+          <p>pok&eacute;mon &middot; starter trio</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--starter" data-category="pokemon" data-title="Sprigatito" data-tags="pokemon, starter, paldea">
+        <div class="card__frame">
+          <img src="assets/thumbs/sprigatito.jpg" data-full="pieces/sprigatito.png" alt="Sprigatito, the green grass cat Pokémon, reaching up with big pink eyes." width="639" height="950" loading="lazy">
+          <span class="card__badge card__badge--starter">playable!</span>
+        </div>
+        <div class="card__info">
+          <h3>Sprigatito</h3>
+          <p>pok&eacute;mon &middot; starter trio</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--wide" data-category="pokemon" data-title="Nickit &amp; Thievul" data-tags="pokemon, scenery, forest, night">
+        <div class="card__frame">
+          <img src="assets/thumbs/nickit and thievul.jpg" data-full="pieces/nickit and thievul.png" alt="A Thievul and two Nickit sneaking through a purple forest at dusk beside a nest of eggs." width="1000" height="500" loading="lazy">
+          <span class="card__badge card__badge--scene">scenery</span>
+        </div>
+        <div class="card__info">
+          <h3>Nickit &amp; Thievul</h3>
+          <p>pok&eacute;mon &middot; fanart &middot; scenery</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--wide" data-category="pokemon" data-title="Xatu &amp; Natu" data-tags="pokemon, scenery, desert, sunset">
+        <div class="card__frame">
+          <img src="assets/thumbs/xatu and natu.jpg" data-full="pieces/xatu and natu.png" alt="Xatu in a striped poncho and a small Natu crossing a desert at sunrise." width="1000" height="500" loading="lazy">
+          <span class="card__badge card__badge--scene">scenery</span>
+        </div>
+        <div class="card__info">
+          <h3>Xatu &amp; Natu</h3>
+          <p>pok&eacute;mon &middot; fanart &middot; scenery</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--wide" data-category="pokemon" data-title="Maractus Sunshine" data-tags="pokemon, scenery, desert, happy">
+        <div class="card__frame">
+          <img src="assets/thumbs/maractus.jpg" data-full="pieces/maractus.png" alt="A beaming Maractus dancing in a bright desert with pink flowers and a wide blue sky." width="1000" height="500" loading="lazy">
+          <span class="card__badge card__badge--scene">scenery</span>
+        </div>
+        <div class="card__info">
+          <h3>Maractus Sunshine</h3>
+          <p>pok&eacute;mon &middot; fanart &middot; scenery</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--wide" data-category="pokemon" data-title="Gorebyss Depths" data-tags="pokemon, scenery, ocean, underwater">
+        <div class="card__frame">
+          <img src="assets/thumbs/gorebyss.jpg" data-full="pieces/gorebyss.png" alt="Two pink Gorebyss Pokémon swimming through deep blue water lit by sunbeams." width="1000" height="500" loading="lazy">
+          <span class="card__badge card__badge--scene">scenery</span>
+        </div>
+        <div class="card__info">
+          <h3>Gorebyss Depths</h3>
+          <p>pok&eacute;mon &middot; fanart &middot; scenery</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="pokemon" data-title="Rust" data-tags="pokemon, single character">
+        <div class="card__frame">
+          <img src="assets/thumbs/rust.jpg" data-full="pieces/rust.png" alt="Bisharp, the bladed Pokémon, in a wide dynamic battle stance." width="911" height="1000" loading="lazy">
+          <span class="card__badge card__badge--oc">OC</span>
+        </div>
+        <div class="card__info">
+          <h3>Rust</h3>
+          <p>pok&eacute;mon oc</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="oc" data-title="Hornet" data-tags="original character, portrait, icon">
+        <div class="card__frame">
+          <img src="assets/thumbs/hornet.jpg" data-full="pieces/hornet.png" alt="Pink portrait icon of Hornetsch smiling with green eyes, glasses and a beanie." width="800" height="800" loading="lazy">
+          <span class="card__badge card__badge--oc">portrait</span>
+        </div>
+        <div class="card__info">
+          <h3>Hornet</h3>
+          <p>portrait</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="fanart" data-title="Wesker Com" data-tags="original character, fan art, dramatic">
+        <div class="card__frame">
+          <img src="assets/thumbs/weskuh com.jpg" data-full="pieces/weskuh com.png" alt="A grinning character with a huge mass of clawed tentacle arms and a blade at his shoulder." width="763" height="1000" loading="lazy">
+          <span class="card__badge">commission</span>
+        </div>
+        <div class="card__info">
+          <h3>Wesker Com</h3>
+          <p>resident evil &middot; commission</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--tall" data-category="fanart" data-title="The Spirit" data-tags="original character, spooky, sword">
+        <div class="card__frame">
+          <img src="assets/thumbs/The spirit oiajfosjugsrgdhs.jpg" data-full="pieces/The spirit oiajfosjugsrgdhs.png" alt="A pale ghostly figure wrapped in bandages holding a chipped sword, with dark floating hair." width="490" height="1000" loading="lazy">
+          <span class="card__badge card__badge--spooky">dead by daylight</span>
+        </div>
+        <div class="card__info">
+          <h3>The Spirit</h3>
+          <p>dead by daylight &middot; fanart</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="pokemon" data-title="Grimm" data-tags="fan art, hollow knight, character">
+        <div class="card__frame">
+          <img src="assets/thumbs/grimm yay.jpg" data-full="pieces/grimm yay.png" alt="Grimm from Hollow Knight striking a theatrical pose with his cloak swirling." width="909" height="1000" loading="lazy">
+          <span class="card__badge card__badge--oc">OC</span>
+        </div>
+        <div class="card__info">
+          <h3>Grimm</h3>
+          <p>pok&eacute;mon oc</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="fanart" data-title="Snowgrave" data-tags="fan art, deltarune, noelle">
+        <div class="card__frame">
+          <img src="assets/thumbs/snowgrave noelle.jpg" data-full="pieces/snowgrave noelle.png" alt="Noelle casting a glowing spell, with a dialogue box reading: watch what happens when I cast a spell I don't know." width="1000" height="760" loading="lazy">
+          <span class="card__badge card__badge--spooky">deltarune</span>
+        </div>
+        <div class="card__info">
+          <h3>Snowgrave</h3>
+          <p>deltarune &middot; fanart</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card card--wide" data-category="fanart" data-title="Team Fortress 2 Electric Boogaloo" data-tags="fan art, team fortress, lineup, chibi">
+        <div class="card__frame">
+          <img src="assets/thumbs/Team fortress 2 electric boogaloo.jpg" data-full="pieces/Team fortress 2 electric boogaloo.png" alt="A long row of chibi Team Fortress 2 mercenaries, each doing something silly." width="1000" height="203" loading="lazy">
+          <span class="card__badge card__badge--team">tf2</span>
+        </div>
+        <div class="card__info">
+          <h3>Team Fortress 2 Electric Boogaloo</h3>
+          <p>tf2 &middot; fanart &middot; chibi</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="sonic" data-title="Just Shadow" data-tags="sonic, shadow, reference sheet">
+        <div class="card__frame">
+          <img src="assets/thumbs/just shadow.jpg" data-full="pieces/just shadow.png" alt="A sheet of Shadow the Hedgehog sketches in several poses and moods." width="905" height="1000" loading="lazy">
+          <span class="card__badge">sonic</span>
+        </div>
+        <div class="card__info">
+          <h3>Just Shadow</h3>
+          <p>sonic &middot; fanart</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="sonic" data-title="Kami" data-tags="sonic, silver, dynamic">
+        <div class="card__frame">
+          <img src="assets/thumbs/kami yaaaaaa axxa.jpg" data-full="pieces/kami yaaaaaa axxa.png" alt="A silver-furred character in red robes swinging a huge paintbrush with a wild grin." width="1000" height="826" loading="lazy">
+          <span class="card__badge">commission</span>
+        </div>
+        <div class="card__info">
+          <h3>Kami</h3>
+          <p>sonic oc &middot; commission</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="pokemon" data-title="Team Gleam" data-tags="pokemon, group, pastel">
+        <div class="card__frame">
+          <img src="assets/thumbs/team gleam yay.jpg" data-full="pieces/team gleam yay.png" alt="A pastel pink composition of soft ghostly Pokémon arranged in a cheerful group." width="1000" height="894" loading="lazy">
+          <span class="card__badge card__badge--team">team shot</span>
+        </div>
+        <div class="card__info">
+          <h3>Team Gleam</h3>
+          <p>pok&eacute;mon oc</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+    </div>
+
+    <p class="gallery__empty" id="galleryEmpty" hidden>
+      No pieces in this pile yet &mdash; try another filter!
+    </p>
+  </section>
+
+  <section class="section game" id="game">
+    <div class="game__head">
+      <p class="section__kicker reveal">bonus round</p>
+      <h2 class="section__title reveal">Starter Scramble</h2>
+      <p class="section__lede reveal">
+        Three very good starters keep popping out of the bushes. Boop them with
+        your cursor (or press <kbd>1</kbd>&ndash;<kbd>9</kbd>) before they duck back down.
+        Chain hits without missing for a combo multiplier, and keep an eye out
+        for a sparkly guest.
+      </p>
+    </div>
+
+    <div class="game__shell reveal" id="gameShell">
+      <div class="game__hud">
+        <div class="hud-chip">
+          <span class="hud-chip__label">score</span>
+          <strong id="hudScore">0</strong>
+        </div>
+        <div class="hud-chip hud-chip--combo" id="hudComboChip">
+          <span class="hud-chip__label">combo</span>
+          <strong><span id="hudCombo">0</span><small>&times;</small></strong>
+        </div>
+        <div class="hud-chip hud-chip--time">
+          <span class="hud-chip__label">time</span>
+          <strong><span id="hudTime">45</span><small>s</small></strong>
+        </div>
+        <div class="hud-chip hud-chip--best">
+          <span class="hud-chip__label">best</span>
+          <strong id="hudBest">0</strong>
+        </div>
+        <button class="hud-btn" id="gamePause" type="button" aria-label="Pause the game">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor"></path></svg>
+        </button>
+      </div>
+
+      <div class="game__stage">
+        <div class="game__sky" aria-hidden="true">
+          <div class="cloud cloud--one"></div>
+          <div class="cloud cloud--two"></div>
+          <div class="cloud cloud--three"></div>
+          <div class="sunbeam sunbeam--one"></div>
+          <div class="sunbeam sunbeam--two"></div>
+          <div class="game__hills"></div>
+        </div>
+
+        <div class="game__board" id="gameBoard">
+          <div class="hole" data-index="1" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="2" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="3" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="4" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="5" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="6" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="7" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="8" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole" data-index="9" tabindex="-1"><span class="hole__shadow"></span><span class="hole__bush"></span><div class="hole__slot"></div></div>
+          <div class="hole__key" aria-hidden="true"></div>
+        </div>
+
+        <div class="game__fx" id="gameFx" aria-hidden="true"></div>
+        <div class="game__toast" id="gameToast" aria-live="polite"></div>
+
+        <div class="game__overlay game__overlay--active" id="gameStart">
+          <div class="overlay-card">
+            <div class="overlay-card__pals">
+              <img src="assets/sprites/Sprigatito.png" alt="" aria-hidden="true">
+              <img src="assets/sprites/Quaxly.png" alt="" aria-hidden="true">
+              <img src="assets/sprites/fuecoco.png" alt="" aria-hidden="true">
+            </div>
+            <h3>Ready to scramble?</h3>
+            <p>
+              Boop the starters for points. Sprigatito is the quickest little
+              cat and worth the most. Missing costs you your combo!
+            </p>
+            <ul class="overlay-card__rules">
+              <li><b>+10</b> Fuecoco &mdash; slow and chill</li>
+              <li><b>+20</b> Quaxly &mdash; medium mischief</li>
+              <li><b>+30</b> Sprigatito &mdash; very fast</li>
+              <li><b>+150</b> ??? &mdash; a rare sparkly guest</li>
+            </ul>
+            <button class="btn btn--primary btn--big" id="gameStartBtn" type="button">
+              <span class="btn__label">Start the game</span>
+              <span class="btn__shine"></span>
+            </button>
+            <p class="overlay-card__hint">press <kbd>Space</kbd> to begin &middot; sound is nicer with headphones</p>
+          </div>
+        </div>
+
+        <div class="game__overlay" id="gamePaused">
+          <div class="overlay-card overlay-card--small">
+            <h3>Paused</h3>
+            <p>Take a breather. The starters will wait. Probably.</p>
+            <button class="btn btn--primary" id="gameResumeBtn" type="button">
+              <span class="btn__label">Keep playing</span>
+              <span class="btn__shine"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="game__overlay" id="gameOver">
+          <div class="overlay-card">
+            <p class="overlay-card__rank" id="resultRank">A</p>
+            <h3 id="resultTitle">Nice scrambling!</h3>
+            <div class="result-grid">
+              <div><span>score</span><strong id="resultScore">0</strong></div>
+              <div><span>best combo</span><strong id="resultCombo">0</strong></div>
+              <div><span>accuracy</span><strong id="resultAccuracy">0%</strong></div>
+              <div><span>high score</span><strong id="resultBest">0</strong></div>
+            </div>
+            <p class="overlay-card__verdict" id="resultVerdict">The starters are impressed.</p>
+            <div class="overlay-card__buttons">
+              <button class="btn btn--primary" id="gameAgainBtn" type="button">
+                <span class="btn__label">Play again</span>
+                <span class="btn__shine"></span>
+              </button>
+              <button class="btn btn--ghost" id="gameCloseBtn" type="button">
+                <span class="btn__label">Back to browsing</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="game__footer">
+        <p class="game__note">
+          Every sprite in here is one of my drawings &mdash; the bushes are just hiding them.
+        </p>
+        <button class="btn btn--mini" id="gameResetBest" type="button">reset high score</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section commissions" id="commissions">
+    <div class="section__head">
+      <p class="section__kicker reveal">commissions</p>
+      <h2 class="section__title reveal">Want me to draw your character?</h2>
+      <p class="section__lede reveal">
+        Hornetsch&rsquo;s character commission sheet! Pick a style and a size.
+      </p>
+    </div>
+
+    <div class="tiers">
+      <article class="tier reveal">
+        <div class="tier__ribbon">quick &amp; cute</div>
+        <h3 class="tier__name">Sketch</h3>
+        <p class="tier__desc">Clean character sketch.</p>
+        <ul class="tier__list">
+          <li>Headshot &mdash; <strong>$7</strong></li>
+          <li>Half body &mdash; <strong>$15</strong></li>
+          <li>Full body &mdash; <strong>$22</strong></li>
+        </ul>
+        <span class="tier__stamp">starter tier</span>
+      </article>
+
+      <article class="tier tier--featured reveal">
+        <div class="tier__ribbon">crisp</div>
+        <h3 class="tier__name">Lineart</h3>
+        <p class="tier__desc">Finished, clean lineart.</p>
+        <ul class="tier__list">
+          <li>Headshot &mdash; <strong>$12</strong></li>
+          <li>Half body &mdash; <strong>$20</strong></li>
+          <li>Full body &mdash; <strong>$27</strong></li>
+        </ul>
+        <span class="tier__stamp">fan favourite</span>
+      </article>
+
+      <article class="tier reveal">
+        <div class="tier__ribbon">the big one</div>
+        <h3 class="tier__name">Full Coloured</h3>
+        <p class="tier__desc">Fully coloured character art.</p>
+        <ul class="tier__list">
+          <li>Headshot &mdash; <strong>$20</strong></li>
+          <li>Half body &mdash; <strong>$30</strong></li>
+          <li>Full body &mdash; <strong>$40</strong></li>
+        </ul>
+        <span class="tier__stamp">deluxe tier</span>
+      </article>
+    </div>
+
+    <div class="process reveal">
+      <h3 class="process__title">Things I will draw</h3>
+      <p class="process__note">Humans &middot; Furry / anthro &middot; Couples</p>
+      <h3 class="process__title">Things I will not draw</h3>
+      <p class="process__note">Mecha &middot; NSFW &middot; Babies</p>
+      <h3 class="process__title">Things to note</h3>
+      <ol class="process__steps">
+        <li><span>1</span><strong>Payment</strong><p>Payment is after I send a sketch.</p></li>
+        <li><span>2</span><strong>References</strong><p>Please provide references.</p></li>
+        <li><span>3</span><strong>Questions</strong><p>Message me for questions!</p></li>
+        <li><span>4</span><strong>PayPal only</strong><p>Payment through PayPal only!</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="contact__card reveal">
+      <div class="contact__tape"></div>
+      <h2 class="contact__title">Come say hi!</h2>
+      <p class="contact__lede">
+        Questions, commission ideas, or you just want to show me a bug you found?
+        Any of those are excellent reasons to message me.
+      </p>
+
+      <ul class="contact__links">
+        <li>
+          <span class="contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 7c3-1.3 7-1.3 10 0l1.5 1.5c1.2 2.5 1.7 5 1.5 8-1.4 1-2.8 1.600-4.200 2l-1-1.600c-1.200.4-2.600.4-3.800 0l-1 1.600c-1.400-.4-2.800-1-4.200-2-.2-3 .3-5.500 1.500-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path><circle cx="9.500" cy="13" r="1.200" fill="currentColor"></circle><circle cx="14.500" cy="13" r="1.200" fill="currentColor"></circle></svg>
+          </span>
+          <span>
+            <strong>Discord</strong>
+            <a href="#contact">hornetsch</a>
+          </span>
+        </li>
+        <li>
+          <span class="contact__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20" fill="none" stroke="currentColor" stroke-width="2.400" stroke-linecap="round"></path></svg>
+          </span>
+          <span>
+            <strong>X</strong>
+            <a href="https://x.com/hornetsch69" target="_blank" rel="noopener">@hornetsch69</a>
+          </span>
+        </li>
+      </ul>
+
+      <p class="contact__tiny">
+        Swap these for your real handles whenever you like &mdash; they are placeholders.
+      </p>
+
+      <button class="btn btn--primary btn--big" id="confettiBtn" type="button">
+        <span class="btn__label">Boop for confetti</span>
+        <span class="btn__shine"></span>
+      </button>
+    </div>
+
+    <div class="contact__doodle" aria-hidden="true">
+      <svg viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="7 9"></circle>
+        <path d="M38 52c0-10 8-18 22-18s22 8 22 18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+        <path d="M34 54h52l-6 34H40z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"></path>
+        <path d="M60 30c-8-12-22-12-24 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+        <circle cx="50" cy="66" r="4" fill="currentColor"></circle>
+        <circle cx="70" cy="66" r="4" fill="currentColor"></circle>
+        <path d="M48 78c6 6 18 6 24 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+      </svg>
+      <span>draw with me</span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__scene" aria-hidden="true">
+    <div class="footer__sun"></div>
+    <div class="footer__cloud footer__cloud--one"></div>
+    <div class="footer__cloud footer__cloud--two"></div>
+    <div class="footer__hill footer__hill--back"></div>
+    <div class="footer__hill footer__hill--front"></div>
+    <div class="footer__flowers">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="footer__inner">
+    <p class="footer__sign">Hornetsch</p>
+    <p class="footer__line">
+      Art &copy; <span id="year">2025</span> Hornetsch. Please do not repost or
+      use my work without asking &mdash; and thank you for looking &lt;3.
+    </p>
+    <p class="footer__meta">
+      Built by <a target="_blank" href="https://github.com/drek124">drek124</a>
+    </p>
+    <button class="back-to-top" id="backToTop" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.5 1.5L13 9v10h-2V9l-4.5 4.5L5 12z" fill="currentColor"></path></svg>
+      back to the top
+    </button>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Artwork viewer" hidden>
+  <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close the viewer">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"></path></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Previous artwork">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </button>
+  <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Next artwork">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </button>
+
+  <figure class="lightbox__figure">
+    <div class="lightbox__image-wrap">
+      <div class="lightbox__loader" id="lightboxLoader"><span></span><span></span><span></span></div>
+      <img id="lightboxImage" src="" alt="">
+    </div>
+    <figcaption class="lightbox__caption">
+      <div>
+        <h3 id="lightboxTitle">&nbsp;</h3>
+        <p id="lightboxMeta">&nbsp;</p>
+      </div>
+      <span class="lightbox__index" id="lightboxIndex">1 / 20</span>
+    </figcaption>
+  </figure>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<div id="confettiLayer" aria-hidden="true"></div>
+
+<div class="magnet-cursor" id="magnetCursor" aria-hidden="true"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
