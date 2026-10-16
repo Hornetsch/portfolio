@@ -388,7 +388,6 @@
   var galleryGrid = pick("#galleryGrid");
   var galleryEmpty = pick("#galleryEmpty");
   var filterButtons = pickAll("[data-filter]");
-  var shuffleButton = pick("#shuffleGallery");
   var allCards = galleryGrid ? pickAll(".card", galleryGrid) : [];
 
   function activeFilter() {
@@ -477,27 +476,6 @@
       toast("Showing: " + label);
     });
   });
-
-  if (shuffleButton && galleryGrid) {
-    shuffleButton.addEventListener("click", function () {
-      var visible = allCards.filter(function (card) {
-        return !card.classList.contains("is-hidden");
-      });
-      for (var i = visible.length - 1; i > 0; i -= 1) {
-        var j = randomInt(0, i);
-        var swap = visible[i];
-        visible[i] = visible[j];
-        visible[j] = swap;
-      }
-      visible.forEach(function (card, index) {
-        card.style.animation = "none";
-        void card.offsetWidth;
-        card.style.animation = "card-shuffle 0.6s ease " + index * 40 + "ms backwards";
-        galleryGrid.appendChild(card);
-      });
-      toast("Shuffled! Fresh eyes on old art.");
-    });
-  }
 
   allCards.forEach(function (card, index) {
     card.style.animationDelay = Math.min(index, 14) * 55 + "ms";

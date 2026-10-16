@@ -11,6 +11,59 @@
 <meta property="og:description" content="Check out my art!! Character illustrations and Pokémon fan art! Come sit by the window :3">
 <meta property="og:image" content="https://hornetsch.github.io/portfolio/pieces/hornet.png">
 <meta property="og:type" content="website">
+<script id="discord:component-embed" type="application/json">
+{
+  "component": {
+    "type": 17,
+    "components": [
+      {
+        "type": 9,
+        "components": [
+          {
+            "type": 10,
+            "content": "[Hornetsch Art Portfolio](https://hornetsch.github.io/portfolio/)\nCome check it out :D"
+          }
+        ],
+        "accessory": {
+          "type": 2,
+          "style": 5,
+          "label": "Open",
+          "url": "https://hornetsch.github.io/portfolio/"
+        }
+      },
+      {
+        "type": 12,
+        "items": [
+          {
+            "media": {
+              "url": "https://hornetsch.github.io/portfolio/assets/thumbs/Team%20slash%20sunset.jpg"
+            }
+          },
+          {
+            "media": {
+              "url": "https://hornetsch.github.io/portfolio/assets/thumbs/xatu%20and%20natu.jpg"
+            }
+          },
+          {
+            "media": {
+              "url": "https://hornetsch.github.io/portfolio/assets/thumbs/maractus.jpg"
+            }
+          },
+          {
+            "media": {
+              "url": "https://hornetsch.github.io/portfolio/assets/thumbs/nickit%20and%20thievul.jpg"
+            }
+          }
+        ]
+      },
+      {
+        "type": 10,
+        "content": "-# *And a lot more in the portfolio gallery :3*"
+      }
+    ]
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Press+Start+2P&display=swap&cachebust=1" rel="stylesheet">
@@ -98,13 +151,14 @@
   <nav class="nav" id="nav" aria-label="Main navigation">
     <a class="nav__link" href="#about"><span>About</span></a>
     <a class="nav__link" href="#gallery"><span>Gallery</span></a>
-    <a class="nav__link" href="#game"><span>Minigame</span></a>
+    <a class="nav__link" href="#emotes"><span>Emotes</span></a>
     <a class="nav__link" href="#commissions"><span>Commissions</span></a>
+    <a class="nav__link" href="#game"><span>Minigame</span></a>
     <a class="nav__link" href="#contact"><span>Say hi</span></a>
   </nav>
 
   <div class="topbar__actions">
-    <button class="icon-btn" id="soundToggle" type="button" aria-pressed="false" title="Toggle sound effects">
+    <button class="icon-btn" id="soundToggle" type="button" aria-pressed="true" title="Toggle sound effects">
       <svg class="icon-sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path></svg>
       <svg class="icon-sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h3l5-4v14l-5-4H4z" fill="currentColor"></path><path d="M16 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"></path></svg>
       <span class="visually-hidden">Toggle sound effects</span>
@@ -282,15 +336,11 @@
     </div>
 
     <div class="filters reveal" id="filters" role="group" aria-label="Filter artwork">
-      <button class="chip chip--active" type="button" data-filter="all">everything <span class="chip__count">20</span></button>
+      <button class="chip chip--active" type="button" data-filter="all">everything <span class="chip__count">22</span></button>
       <button class="chip" type="button" data-filter="pokemon">pok&eacute;mon <span class="chip__count">10</span></button>
       <button class="chip" type="button" data-filter="sonic">sonic <span class="chip__count">2</span></button>
-      <button class="chip" type="button" data-filter="oc">original characters <span class="chip__count">4</span></button>
+      <button class="chip" type="button" data-filter="oc">original characters <span class="chip__count">6</span></button>
       <button class="chip" type="button" data-filter="fanart">other fan art <span class="chip__count">4</span></button>
-      <button class="chip chip--shuffle" type="button" id="shuffleGallery">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h4l8 10h4M4 17h4l2-2.5M16 7h4M18 4l3 3-3 3M18 14l3 3-3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        shuffle
-      </button>
     </div>
 
     <div class="gallery__grid" id="galleryGrid">
@@ -575,11 +625,135 @@
         </span>
       </article>
 
+      <article class="card" data-category="oc" data-title="Peanut" data-tags="original character, peanut">
+        <div class="card__frame">
+          <img src="assets/thumbs/peanut1.png" data-full="assets/thumbs/peanut1.png" alt="Illustration of Peanut, an original character." width="1120" height="1795" loading="lazy">
+          <span class="card__badge card__badge--oc">my OC</span>
+        </div>
+        <div class="card__info">
+          <h3>Peanut</h3>
+          <p>oc &middot; full illustration</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
+      <article class="card" data-category="oc" data-title="Peanut Selfie" data-tags="original character, peanut, selfie">
+        <div class="card__frame">
+          <img src="assets/thumbs/peanutselfie.png" data-full="assets/thumbs/peanutselfie.png" alt="Peanut, an original character, taking a selfie." width="1000" height="1000" loading="lazy">
+          <span class="card__badge card__badge--oc">my OC</span>
+        </div>
+        <div class="card__info">
+          <h3>Peanut Selfie</h3>
+          <p>oc &middot; selfie</p>
+        </div>
+        <span class="card__peek">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2.2" fill="none"></circle><path d="M16 16l5 5M11 8.5v5M8.5 11h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"></path></svg>
+        </span>
+      </article>
+
     </div>
 
     <p class="gallery__empty" id="galleryEmpty" hidden>
       No pieces in this pile yet &mdash; try another filter!
     </p>
+  </section>
+
+  <section class="section emotes" id="emotes">
+    <div class="section__head">
+      <p class="section__kicker reveal">emotes</p>
+      <h2 class="section__title reveal">Peanut emotes</h2>
+      <p class="section__lede reveal">
+        I also do emotes for Twitch, Discord & other communities &gt;w&lt;
+      </p>
+    </div>
+
+    <ul class="emotes__grid reveal">
+        <li class="emote"><img src="assets/emotes/peanut emote 1.png" alt="Peanut emote 1" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 2.png" alt="Peanut emote 2" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 3.png" alt="Peanut emote 3" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 4.png" alt="Peanut emote 4" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 5.png" alt="Peanut emote 5" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 6.png" alt="Peanut emote 6" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 7.png" alt="Peanut emote 7" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 8.png" alt="Peanut emote 8" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 9.png" alt="Peanut emote 9" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 10.png" alt="Peanut emote 10" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 11.png" alt="Peanut emote 11" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 12.png" alt="Peanut emote 12" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 13.png" alt="Peanut emote 13" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 14.png" alt="Peanut emote 14" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 15.png" alt="Peanut emote 15" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut emote 16.png" alt="Peanut emote 16" width="700" height="700" loading="lazy"></li>
+        <li class="emote"><img src="assets/emotes/peanut_emote_17.png" alt="Peanut emote 17" width="700" height="700" loading="lazy"></li>
+    </ul>
+  </section>
+
+  <section class="section commissions" id="commissions">
+    <div class="section__head">
+      <p class="section__kicker reveal">commissions</p>
+      <h2 class="section__title reveal">Want me to draw your character?</h2>
+      <p class="section__lede reveal">
+        Hornetsch&rsquo;s character commission sheet! Pick a style and a size.
+      </p>
+    </div>
+
+    <div class="tiers">
+      <article class="tier reveal">
+        <div class="tier__ribbon">quick &amp; cute</div>
+        <h3 class="tier__name">Sketch</h3>
+        <p class="tier__desc">Clean character sketch.</p>
+        <ul class="tier__list">
+          <li>Headshot &mdash; <strong>$7</strong></li>
+          <li>Half body &mdash; <strong>$15</strong></li>
+          <li>Full body &mdash; <strong>$22</strong></li>
+        </ul>
+        <span class="tier__stamp">starter tier</span>
+      </article>
+
+      <article class="tier tier--featured reveal">
+        <div class="tier__ribbon">crisp</div>
+        <h3 class="tier__name">Lineart</h3>
+        <p class="tier__desc">Finished, clean lineart.</p>
+        <ul class="tier__list">
+          <li>Headshot &mdash; <strong>$12</strong></li>
+          <li>Half body &mdash; <strong>$20</strong></li>
+          <li>Full body &mdash; <strong>$27</strong></li>
+        </ul>
+        <span class="tier__stamp">fan favourite</span>
+      </article>
+
+      <article class="tier reveal">
+        <div class="tier__ribbon">the big one</div>
+        <h3 class="tier__name">Full Coloured</h3>
+        <p class="tier__desc">Fully coloured character art.</p>
+        <ul class="tier__list">
+          <li>Headshot &mdash; <strong>$20</strong></li>
+          <li>Half body &mdash; <strong>$30</strong></li>
+          <li>Full body &mdash; <strong>$40</strong></li>
+        </ul>
+        <span class="tier__stamp">deluxe tier</span>
+      </article>
+    </div>
+
+    <figure class="refsheet reveal">
+      <img src="assets/thumbs/ref_sheet.png" alt="Commission reference sheet showing example character art." width="2800" height="1575" loading="lazy">
+    </figure>
+
+    <div class="process reveal">
+      <h3 class="process__title">Things I will draw</h3>
+      <p class="process__note">Humans &middot; Furry / anthro &middot; Couples</p>
+      <h3 class="process__title">Things I will not draw</h3>
+      <p class="process__note">Mecha &middot; NSFW &middot; Babies</p>
+      <h3 class="process__title">Things to note</h3>
+      <ol class="process__steps">
+        <li><span>1</span><strong>Payment</strong><p>Payment is after I send a sketch.</p></li>
+        <li><span>2</span><strong>References</strong><p>Please provide references.</p></li>
+        <li><span>3</span><strong>Questions</strong><p>Message me for questions!</p></li>
+        <li><span>4</span><strong>PayPal only</strong><p>Payment through PayPal only!</p></li>
+      </ol>
+    </div>
   </section>
 
   <section class="section game" id="game">
@@ -710,68 +884,6 @@
         </p>
         <button class="btn btn--mini" id="gameResetBest" type="button">reset high score</button>
       </div>
-    </div>
-  </section>
-
-  <section class="section commissions" id="commissions">
-    <div class="section__head">
-      <p class="section__kicker reveal">commissions</p>
-      <h2 class="section__title reveal">Want me to draw your character?</h2>
-      <p class="section__lede reveal">
-        Hornetsch&rsquo;s character commission sheet! Pick a style and a size.
-      </p>
-    </div>
-
-    <div class="tiers">
-      <article class="tier reveal">
-        <div class="tier__ribbon">quick &amp; cute</div>
-        <h3 class="tier__name">Sketch</h3>
-        <p class="tier__desc">Clean character sketch.</p>
-        <ul class="tier__list">
-          <li>Headshot &mdash; <strong>$7</strong></li>
-          <li>Half body &mdash; <strong>$15</strong></li>
-          <li>Full body &mdash; <strong>$22</strong></li>
-        </ul>
-        <span class="tier__stamp">starter tier</span>
-      </article>
-
-      <article class="tier tier--featured reveal">
-        <div class="tier__ribbon">crisp</div>
-        <h3 class="tier__name">Lineart</h3>
-        <p class="tier__desc">Finished, clean lineart.</p>
-        <ul class="tier__list">
-          <li>Headshot &mdash; <strong>$12</strong></li>
-          <li>Half body &mdash; <strong>$20</strong></li>
-          <li>Full body &mdash; <strong>$27</strong></li>
-        </ul>
-        <span class="tier__stamp">fan favourite</span>
-      </article>
-
-      <article class="tier reveal">
-        <div class="tier__ribbon">the big one</div>
-        <h3 class="tier__name">Full Coloured</h3>
-        <p class="tier__desc">Fully coloured character art.</p>
-        <ul class="tier__list">
-          <li>Headshot &mdash; <strong>$20</strong></li>
-          <li>Half body &mdash; <strong>$30</strong></li>
-          <li>Full body &mdash; <strong>$40</strong></li>
-        </ul>
-        <span class="tier__stamp">deluxe tier</span>
-      </article>
-    </div>
-
-    <div class="process reveal">
-      <h3 class="process__title">Things I will draw</h3>
-      <p class="process__note">Humans &middot; Furry / anthro &middot; Couples</p>
-      <h3 class="process__title">Things I will not draw</h3>
-      <p class="process__note">Mecha &middot; NSFW &middot; Babies</p>
-      <h3 class="process__title">Things to note</h3>
-      <ol class="process__steps">
-        <li><span>1</span><strong>Payment</strong><p>Payment is after I send a sketch.</p></li>
-        <li><span>2</span><strong>References</strong><p>Please provide references.</p></li>
-        <li><span>3</span><strong>Questions</strong><p>Message me for questions!</p></li>
-        <li><span>4</span><strong>PayPal only</strong><p>Payment through PayPal only!</p></li>
-      </ol>
     </div>
   </section>
 
